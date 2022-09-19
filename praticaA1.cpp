@@ -32,19 +32,19 @@ int main()
 		cout << " FIM! Isso é tudo pessoal" << endl;
 		cout << " Qual é sua opcao?" << endl;
 		cin >> opcao;
-		switch(opcao);
+		switch (opcao)
 		{
-			case 1: cadastro();
+			case 1: cadastro ();
 			break;
-			case 2: listar();
+			case 2: listar ();
 			break;
-			case 3: reajuste();
+			case 3: reajuste ();
 			break;
-			case 4: vendas();
+			case 4: vendas ();
 			break;
-			case 5: compras();
+			case 5: compras ();
 			break;
-		};
+		}
 	} while(opcao =! 6);
 }
 void cadastro(){
@@ -54,9 +54,9 @@ void cadastro(){
 	cout << " Informe o nome" << endl;
 	cin.getline(tab[total].nome,50);
 	cout << " Informe o preco" << endl;
-	cin.getline(tab[total].preco, 50);
+	cin >> tab[total].preco;
 	cout << "Informe a Quantidade" << endl;
-	cin.getline(tab[total].quantidade,50);
+	cin >> (tab[total].quantidade);
 	total++;
 }
 void listar(){
@@ -65,10 +65,11 @@ void listar(){
 	while (i <total)
 	{
 		cout << tab[i].codigo << " - " << tab[i].nome << " - " << tab[i].preco << " - " << tab[i].quantidade << endl;
-		i++
+		i++;
 	}
 }
-int pesquisa(int cod){
+int pesquisa(int cod)
+{
 	int i=0;
 	while ((i<total) && (tab[i].codigo != cod))
 	{
